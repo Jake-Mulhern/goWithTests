@@ -1,4 +1,4 @@
-module hello
+module github.com/Jake-Mulhern/goWithTests
 
 go 1.21.6
 
