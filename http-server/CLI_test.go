@@ -87,7 +87,7 @@ func TestCLI(t *testing.T) {
 		cli.PlayPoker()
 
 		assertGameNotFinished(t, game)
-		// assertMessagesSentToUser(t, stdout, poker.PlayerPrompt, poker.BadWinnerInputMsg)
+		assertMessagesSentToUser(t, stdout, poker.PlayerPrompt, poker.BadWinnerInputMsg)
 	})
 }
 
