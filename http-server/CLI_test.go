@@ -2,6 +2,7 @@ package poker_test
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"strings"
 	"testing"
@@ -24,6 +25,8 @@ type GameSpy struct {
 }
 
 func (g *GameSpy) Start(numberOfPlayers int, out io.Writer) {
+	fmt.Println("Game spy # of players")
+	fmt.Println(numberOfPlayers)
 	g.StartCalled = true
 	g.StartCalledWith = numberOfPlayers
 	out.Write(g.BlindAlert)
@@ -35,6 +38,8 @@ func (g *GameSpy) Finish(winner string) {
 }
 
 func userSends(messages ...string) io.Reader {
+	fmt.Println("user sends: ")
+	fmt.Println(messages)
 	return strings.NewReader(strings.Join(messages, "\n"))
 }
 

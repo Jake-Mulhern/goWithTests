@@ -178,6 +178,9 @@ func within(t testing.TB, d time.Duration, assert func()) {
 }
 
 func writeWSMessage(t testing.TB, conn *websocket.Conn, message string) {
+	fmt.Println("conn message: ")
+	fmt.Println(message)
+
 	t.Helper()
 	if err := conn.WriteMessage(websocket.TextMessage, []byte(message)); err != nil {
 		t.Fatalf("could not send message over ws connection %v", err)
